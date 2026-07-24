@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grey Hornbill — Golf Course Booking Platform</title>
+<meta name="description" content="Grey Hornbill is a booking platform for golf courses, with George — an AI voice agent that books tee times over the phone. Built by Plus Bytes.">
+<style>
+  :root {
+    --ink: #1c2321;
+    --paper: #faf9f6;
+    --accent: #4a5d4e;
+    --muted: #6b7570;
+    --line: #e2e0da;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 64px 24px 96px; }
+  header { text-align: center; margin-bottom: 56px; }
+  header img { width: 96px; height: auto; margin-bottom: 20px; }
+  h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .tagline { color: var(--muted); font-size: 1.05rem; margin: 0; }
+  h2 { font-size: 1.3rem; margin: 48px 0 14px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+  p { margin: 0 0 16px; }
+  ul { padding-left: 22px; margin: 0 0 16px; }
+  li { margin-bottom: 8px; }
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .links {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+  footer {
+    text-align: center;
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  footer a { color: var(--accent); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img src="greyhornbill-logo.png" alt="Grey Hornbill logo">
+    <h1>Grey Hornbill</h1>
+    <p class="tagline">Golf course booking, without the phone tag.</p>
+    <div class="links">
+      <a class="btn btn-primary" href="https://greyhornbill.com">Visit greyhornbill.com</a>
+      <a class="btn btn-secondary" href="https://plusbytes.com">Built by Plus Bytes</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>What it is</h2>
+    <p>
+      Grey Hornbill is a booking platform for golf courses. It replaces scattered
+      phone bookings and clunky third-party widgets with one system that keeps every
+      course's tee sheet accurate, in real time, no matter how the booking comes in.
+    </p>
+  </section>
+
+  <section>
+    <h2>How golfers can book</h2>
+    <div class="card">
+      <ul>
+        <li><strong>By phone, with George</strong> — an AI voice agent that answers, checks live availability, and books the tee time on the call, including group bookings.</li>
+        <li><strong>Online</strong> — a booking widget a course can embed directly on its own website.</li>
+        <li><strong>Through the pro shop</strong> — staff manage the same tee sheet from a dashboard, with the same live availability golfers see.</li>
+      </ul>
+      <p style="margin-bottom:0;">All three stay in sync automatically — there's no separate system to reconcile.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Built for real course operations</h2>
+    <ul>
+      <li>Handles large group bookings, not just single foursomes</li>
+      <li>Respects each course's own hours, tee intervals, and capacity rules</li>
+      <li>Course closures and maintenance windows are handled without manual cleanup</li>
+      <li>Each course gets its own configuration — this is a multi-course platform, not a one-off build</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Who it's for</h2>
+    <p>
+      Golf courses and clubs that want fewer missed calls, fewer double-bookings, and a
+      booking experience that feels as good as a great pro shop — without adding staff.
+    </p>
+  </section>
+
+  <footer>
+    Grey Hornbill is a product of <a href="https://plusbytes.com">Plus Bytes</a>.
+    See it live at <a href="https://greyhornbill.com">greyhornbill.com</a>.
+    <br>This repository contains only a public overview — the platform's source is private.
+  </footer>
+
+</div>
+</body>
+</html>
