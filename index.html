@@ -10,10 +10,13 @@
     --ink: #1c2321;
     --paper: #faf9f6;
     --accent: #4a5d4e;
+    --accent-light: #7c9482;
+    --sky: #dce8e2;
     --muted: #6b7570;
     --line: #e2e0da;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     background: var(--paper);
@@ -21,27 +24,67 @@
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     line-height: 1.65;
   }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 64px 24px 96px; }
-  header { text-align: center; margin-bottom: 56px; }
-  header img { width: 296px; height: auto; margin-bottom: 20px; }
-  h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
-  .tagline { color: var(--muted); font-size: 1.05rem; margin: 0; }
-  h2 { font-size: 1.3rem; margin: 48px 0 14px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
-  p { margin: 0 0 16px; }
-  ul { padding-left: 22px; margin: 0 0 16px; }
-  li { margin-bottom: 8px; }
-  .card {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 24px 28px;
-    margin-bottom: 16px;
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px 96px; }
+
+  /* Sticky nav */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(250, 249, 246, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
   }
+  nav .nav-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  nav .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  nav .brand img { width: 300px; max-width: 46vw; height: auto; display: block; }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  nav a:hover { color: var(--accent); }
+
+  /* Hero */
+  header.hero { text-align: center; padding: 56px 0 8px; }
+  header.hero h1 { font-size: 2.1rem; margin: 8px 0 6px; letter-spacing: -0.02em; }
+  header.hero .tagline { color: var(--muted); font-size: 1.05rem; margin: 0 0 28px; }
+
+  .illustration {
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    margin: 0 auto 32px;
+    display: block;
+    border-radius: 16px;
+  }
+
   .links {
     display: flex;
     gap: 14px;
     justify-content: center;
-    margin-top: 28px;
+    margin-bottom: 8px;
     flex-wrap: wrap;
   }
   .btn {
@@ -54,6 +97,20 @@
   }
   .btn-primary { background: var(--accent); color: #fff; }
   .btn-secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+
+  section { scroll-margin-top: 74px; }
+  h2 { font-size: 1.3rem; margin: 56px 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  p { margin: 0 0 16px; }
+  ul { padding-left: 22px; margin: 0 0 16px; }
+  li { margin-bottom: 8px; }
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+
   footer {
     text-align: center;
     margin-top: 64px;
@@ -64,22 +121,89 @@
   }
   footer a { color: var(--accent); }
   a { color: var(--accent); }
+
+  @media (max-width: 520px) {
+    nav ul { gap: 12px; }
+    nav .nav-inner { justify-content: center; }
+  }
 </style>
 </head>
 <body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">
+      <img src="grey_hornbill_logo_v7.png" alt="">
+    </div>
+    <ul>
+      <li><a href="#what-it-is">Overview</a></li>
+      <li><a href="#how-it-works">How it works</a></li>
+      <li><a href="#built-for">Built for</a></li>
+      <li><a href="#who-its-for">Who it's for</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="wrap">
 
-  <header>
-    <img src="grey_hornbill_logo_v7.png" alt="Grey Hornbill logo">
+  <header class="hero">
     <h1>Grey Hornbill</h1>
     <p class="tagline">Golf course booking, without the phone tag.</p>
+
+    <svg class="illustration" viewBox="0 0 620 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a golf course with a flag on the green under a hazy sky">
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#eef2ee"/>
+          <stop offset="100%" stop-color="#dce8e2"/>
+        </linearGradient>
+        <linearGradient id="fairwayGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#a9c2ab"/>
+          <stop offset="100%" stop-color="#7c9482"/>
+        </linearGradient>
+        <linearGradient id="greenGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#8fae91"/>
+          <stop offset="100%" stop-color="#5f7e64"/>
+        </linearGradient>
+      </defs>
+
+      <rect x="0" y="0" width="620" height="260" fill="url(#skyGrad)"/>
+
+      <!-- sun -->
+      <circle cx="500" cy="55" r="30" fill="#f4ede0" opacity="0.9"/>
+
+      <!-- distant tree line -->
+      <ellipse cx="90" cy="120" rx="60" ry="24" fill="#6d8a72" opacity="0.55"/>
+      <ellipse cx="150" cy="128" rx="45" ry="18" fill="#6d8a72" opacity="0.45"/>
+      <ellipse cx="540" cy="130" rx="50" ry="20" fill="#6d8a72" opacity="0.4"/>
+
+      <!-- fairway -->
+      <path d="M0,150 C 140,110 480,110 620,150 L620,260 L0,260 Z" fill="url(#fairwayGrad)"/>
+
+      <!-- putting green -->
+      <ellipse cx="330" cy="205" rx="150" ry="42" fill="url(#greenGrad)"/>
+
+      <!-- bunker -->
+      <ellipse cx="440" cy="222" rx="34" ry="12" fill="#e8dcc0"/>
+
+      <!-- flag pole -->
+      <line x1="330" y1="120" x2="330" y2="200" stroke="#3f4a41" stroke-width="3"/>
+      <path d="M330,122 L368,133 L330,144 Z" fill="#b5544a"/>
+
+      <!-- hole marker -->
+      <ellipse cx="330" cy="201" rx="5" ry="2.4" fill="#2c352e"/>
+
+      <!-- tee marker in foreground -->
+      <circle cx="70" cy="235" r="5" fill="#c99a3f"/>
+      <circle cx="88" cy="240" r="5" fill="#c99a3f"/>
+    </svg>
+
     <div class="links">
       <a class="btn btn-primary" href="https://greyhornbill.com">Visit greyhornbill.com</a>
       <a class="btn btn-secondary" href="https://plusbytes.com">Built by Plus Bytes</a>
     </div>
   </header>
 
-  <section>
+  <section id="what-it-is">
     <h2>What it is</h2>
     <p>
       Grey Hornbill is a booking platform for golf courses. It replaces scattered
@@ -88,7 +212,7 @@
     </p>
   </section>
 
-  <section>
+  <section id="how-it-works">
     <h2>How golfers can book</h2>
     <div class="card">
       <ul>
@@ -100,7 +224,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="built-for">
     <h2>Built for real course operations</h2>
     <ul>
       <li>Handles large group bookings, not just single foursomes</li>
@@ -110,7 +234,7 @@
     </ul>
   </section>
 
-  <section>
+  <section id="who-its-for">
     <h2>Who it's for</h2>
     <p>
       Golf courses and clubs that want fewer missed calls, fewer double-bookings, and a
